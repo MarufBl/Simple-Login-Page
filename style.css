@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+	padding: 0;
+	margin: 0;
+	font-family: 'Poppins', sans-serif;
+	scroll-behavior: smooth;
+	box-sizing: border-box;
+}
+
+#backgroundVideo {
+	position: relative; /* Make sure the ::before element is positioned relative to the body */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    background-size: cover;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1); /* Adjust the alpha value to control the darkness */
+    z-index: -1; /* Place the overlay behind the content */
+}
+
+.header-wrapper {
+	width: 100%;
+	height: 75px;
+	background-color: white;
+	position: relative;
+	padding: 22px 100px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+.header {
+	position: absolute;
+	width: 1300px;
+	height: 75px;
+	padding: 22px 100px;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+img {
+	cursor: pointer;
+	margin: -20px 0px;
+}
+
+.navigation {
+	width: 500px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.navigation a {
+	position: relative;
+	font-size: 1.1em;
+	color: black;
+	text-decoration: none;
+	font-weight: 500;
+	margin-left: 40px
+}
+
+.navigation a::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: -6px;
+	width: 100%;
+	background: black;
+	height: 3px;
+	border-radius: 5px;
+	transform-origin: left;
+	transform: scaleX(0);
+	transition: transform 0.5s;
+
+}
+
+.navigation a:hover::after {
+	transform: scaleX(1);
+	transform-origin: right;
+}
+
+.btn-popup {
+	width: 130px;
+	height: 50px;
+	border: 2px solid black;
+	outline: none;
+	border-radius: 50px;
+	cursor: pointer;
+	font-size: 1.1em;
+	color: white;
+	background: black;
+	font-weight: 500;
+	margin-left: 40px;
+	transition: .5s ease all;
+}
+
+.wrapper {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.wrapper2 {
+	position: relative;
+	width: 400px;
+	height: 440px;
+	background: #EDF1F2;
+	border: 2px solid white;
+	border-radius: 20px;
+	box-shadow: 0 0 30px rgba(254, 254, 254, .2);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+.wrapper2 .close {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 45px;
+	height: 45px;
+	background-color: black;
+	font-size: 2em;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	border-bottom-left-radius: 20px;
+	z-index: 1;
+}
+
+.form-box {
+	width: 100%;
+	padding: 40px;
+}
+
+.form-box h2 {
+	font-size: 2em;
+	color: black;
+	text-align: center;
+}
+
+.input-box {
+	position: relative;
+	width: 100%;
+	height: 50px;
+	border-bottom: 2px solid black;
+	margin: 30px 0;
+}
+
+.input-box label {
+    position: absolute;
+	top: 50%;
+	left: 5px;
+    transition: .5s;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: black;
+    font-weight: 500;
+    pointer-events: none;
+}
+
+.input-box label.active {
+    top: -5px;
+    font-size: 0.9em;
+}
+
+.input-box input {
+	width: 100%;
+	height: 100%;
+	background: #EBECEC;
+	border: none;
+	outline: none;
+	transition: .5s;
+	font-size: 1em;
+	color: black;
+	font-weight: 600;
+	padding: 0 35px 0 5px;
+}
+
+.input-box .icon {
+	position: absolute;
+	right: 8px;
+	font-size: 1.2em;
+	color: black;
+	line-height: 55px;
+}
+
+.remember-forget {
+    font-size: 0.9em;
+    color: black;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.remember-forget label {
+    display: flex;
+    align-items: center;
+    cursor: pointer; /* Change cursor to pointer when hovering over the label */
+}
+
+.remember-forget label input {
+    margin-right: 3px;
+}
+
+.remember-forget a {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+.remember-forget a:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+.btn {
+	width: 100%;
+	height: 45px;
+	background: black;
+	border:none;
+	outline: none;
+	cursor: pointer;
+	font-size: 1em;
+	color: #fff;
+	font-weight: 500;
+	border-radius: 50px;
+}
+
+.btn:hover {
+	background-color: #2A2A2A;
+	transition: .5s;
+}
+
+.login-register {
+	font-size: .9em;
+	color: black;
+	text-align: center;
+	font-weight: 500;
+	margin: 25px 0 10px;
+}
+
+.login-register p a {
+	color: black;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.login-register p a:hover {
+	text-decoration: underline;
+}

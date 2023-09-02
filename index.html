@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="fontawesome.com/releases/v6.4.2/css/all.css">
+</head>
+<body>
+	<video autoplay muted loop id="backgroundVideo">
+        <source src="back.mp4" type="video/mp4">
+    </video>
+	<div class="header-wrapper">
+		<div class="header">
+		<img src="google-icon.png" alt="googleicon">
+		<nav class="navigation">
+			<a href="javascript:void(0)">Home</a>
+			<a href="javascript:void(0)">About</a>
+			<a href="javascript:void(0)">Services</a>
+			<a href="javascript:void(0)">Contact Us</a>
+		</nav>
+		<button class="btn-popup">Login</button>
+	</div>
+	</div>
+	<div class="wrapper">
+		<div class="wrapper2">
+			<i class="fa-regular fa-xmark close"></i>
+			<div class="form-box login">
+				<h2>Login</h2>
+				<form action="post">
+					<div class="input-box">
+						<i class="fa-solid fa-envelope icon"></i>
+						<input type="email" id="emailInput">
+						<label for="emailInput">Email</label>
+					</div>
+					<div class="input-box">
+						<i class="fa-solid fa-lock icon"></i>
+						<input type="password" id="passwordInput">
+						<label for="passwordInput">Password</label>
+					</div>
+					<div class="remember-forget">
+					    <label>
+					        <input type="checkbox">
+					        Remember me
+					    </label>
+					    <a href="javascript:void(0)">Forgot Password?</a>
+					</div>
+					<button type="submit" class="btn">Login</button>
+					<div class="login-register">
+						<p>Don't have an account?
+						<a href="javascript:void(0)">Register</a></p>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+		    const inputFields = document.querySelectorAll(".input-box input");
+
+		    inputFields.forEach(input => {
+		        input.addEventListener("focus", function() {
+		            input.parentNode.querySelector("label").classList.add("active");
+		        });
+
+		        input.addEventListener("blur", function() {
+		            if (input.value === "") {
+		                input.parentNode.querySelector("label").classList.remove("active");
+		            }
+		        });
+		    });
+		});
+	</script>
+</body>
+</html>
